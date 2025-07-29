@@ -1,0 +1,59 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul li {
+  list-style: none;
+}
+ul li a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: 14px;
+  color: hsba(0, 0%, 16%, 1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 10px;
+}
+
+.header__content {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.header__header {
+  display: flex;
+}
+.header__name {
+  display: flex;
+  gap: 17px;
+}
+.header__favourites {
+  display: flex;
+  gap: 13px;
+}
+.header__basket {
+  display: flex;
+  gap: 8px;
+}
+.header__footer {
+  display: flex;
+}
+.header__footer .footer__list {
+  display: flex;
+  gap: 9px;
+}
+.header__footer .footer__sort {
+  display: flex;
+  gap: 8px;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/scss/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- DESKTOP-1 -->
+      <div class="wrapper__in">
+        <div class="header container">
+          <nav class="header__nav">
+            <div class="header__content">
+              <!-- HEADER HEADER -->
+              <div class="header__header">
+                <!-- CHAP TARAF -->
+                <a href="/index.html" class="header__name name">
+                  <div class="name__logo">
+                    <img src="/img/logo.png" alt="pizza" />
+                  </div>
+                  <div class="name__content">
+                    <div class="name__head">REACT PIZZA</div>
+                    <div class="name__text">
+                      самая вкусная пицца во вселенной
+                    </div>
+                  </div>
+                </a>
+
+                <!-- O'NG TARAF -->
+                <a href="/cart.html" class="header__favourites">
+                  <div id="totalPriceindex" class="header__price"></div>
+                  <span class="header__span">₽</span>
+                  <div class="header__basket basket">
+                    <div class="basket__img">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z"
+                          stroke="white"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M14.3333 16.3333C15.0697 16.3333 15.6667 15.7364 15.6667 15C15.6667 14.2636 15.0697 13.6667 14.3333 13.6667C13.597 13.6667 13 14.2636 13 15C13 15.7364 13.597 16.3333 14.3333 16.3333Z"
+                          stroke="white"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M4.78002 4.99999H16.3334L15.2134 10.5933C15.1524 10.9003 14.9854 11.176 14.7417 11.3722C14.4979 11.5684 14.1929 11.6727 13.88 11.6667H6.83335C6.50781 11.6694 6.1925 11.553 5.94689 11.3393C5.70128 11.1256 5.54233 10.8295 5.50002 10.5067L4.48669 2.82666C4.44466 2.50615 4.28764 2.21182 4.04482 1.99844C3.80201 1.78505 3.48994 1.66715 3.16669 1.66666H1.66669"
+                          stroke="white"
+                          stroke-width="1.8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                    <div id="totalQuantityIndex" class="basket__count"></div>
+                  </div>
+                </a>
+              </div>
+
+              <!-- HEADER FOOTER -->
+
+              <div class="header__footer footer">
+                <div id="burger" class="footer__burger">&#9776;</div>
+                <div class="footer__list">
+                  <div id="lists" class="footer__lists">
+                    <button id="btn-all" onclick="showAll()" class="btn">
+                      Все
+                    </button>
+                    <button id="btn-meat" onclick="showMeat()" class="btn">
+                      Мясные
+                    </button>
+                    <button
+                      id="btn-vege"
+                      onclick="showVegeterian()"
+                      class="btn"
+                    >
+                      Вегетарианская
+                    </button>
+                    <button id="btn-grill" onclick="showGrill()" class="btn">
+                      Гриль
+                    </button>
+                    <button id="btn-spicy" onclick="showSpicy()" class="btn">
+                      Острые
+                    </button>
+                    <button id="btn-closed" onclick="showClosed()" class="btn">
+                      Закрытые
+                    </button>
+                  </div>
+                </div>
+                <div class="footer__sort">
+                  <div class="footer__text">Сортировка по:</div>
+                  <div class="footer__select">
+                    <select name="" id="filter">
+                      <option value="famous">популярности</option>
+                      <option value="price">по цене</option>
+                      <option value="alphabet">по алфавиту</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <main>
+          <section class="products">
+            <div class="products__container container">
+              <div class="products__header">
+                <h1>Все пиццы</h1>
+              </div>
+              <div id="productRow" class="products__row"></div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/total.js"></script>
+  </body>
+</html>
+
+<!-- <div class="products__col">
+  <div class="products__box box-products">
+    <div class="box-products__img">
+      <img src="${product.imageUrl}" alt="" />
+    </div>
+    <div class="box-products__content">
+      <div class="box-products__header">${product.name}</div>
+      <div class="box-products__main">
+        <div class="box-products__thickness">
+          <label class="thickness-option thickness-option--thin">
+            <input
+              class="thickness-input choose"
+              type="radio"
+              name="thickness-${product.id}"
+            />
+            <span class="thickness-checkmark checkmark">тонкое</span>
+          </label>
+          <label class="thickness-option thickness-option--tradition">
+            <input
+              class="thickness-input choose"
+              type="radio"
+              name="thickness-${product.id}"
+            />
+            <span class="thickness-checkmark checkmark">традиционное</span>
+          </label>
+        </div>
+        <div class="box-products__diameter">
+          <label class="diameter-option">
+            <input
+              class="diameter-input pick"
+              type="radio"
+              name="diameter-${product.id}"
+            />
+            <span class="diameter-checkmark checkmark">26 см.</span>
+          </label>
+          <label class="diameter-option">
+            <input
+              class="diameter-input pick"
+              type="radio"
+              name="diameter-${product.id}"
+            />
+            <span class="diameter-checkmark checkmark">30 см.</span>
+          </label>
+          <label class="diameter-option">
+            <input
+              class="diameter-input pick"
+              type="radio"
+              name="diameter-${product.id}"
+            />
+            <span class="diameter-checkmark checkmark">40 см.</span>
+          </label>
+        </div>
+      </div>
+      <div class="box-products__footer">
+        <div class="box-products__prices">
+          <div>от</div>
+          <div class="box-products__price">${product.price}</div>
+          <div>₽</div>
+        </div>
+
+        <button
+          class="box-products__add"
+          onclick="addToCart(${product.id}); 
+        allPriceIndex(); 
+        allQuantityIndex();
+        displayBlock(${product.id});
+          singleQuantityIndex(${product.id})"
+        >
+          <div class="box-products__span">
+            <span class="box-products__plus">+</span>
+            <span class="box-products__text">Добавить</span>
+            <span
+              id="pizzaCount-${product.id}"
+              class="box-products__quantity"
+            ></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- CSS
+1. 4 ta bolishi kerak, grid yoki flex bilan togirlash kerak, tip: flex: 0 1 25/50/100% tabga qarab, product-item'ni sayqallash, pitsalar
+4. Empty cartni togirlash cartga
+3. Header burger Filterlarni mobilda tartiblash
+2. Cart qismidagi stillarni togirlash, razmerlarini kichiraytirish mobilda
+5. Cart'dagi buttonlarni sayqallash mobile + desktop
+6. Vsego pitssa sayqallash -->
